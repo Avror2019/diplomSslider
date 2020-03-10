@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Слайдер на CSS3</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="fa/css/bootstrap.css">
+    <link rel="stylesheet" href="fa/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="razmer-okna">
+        <div class="conteiner-centr">
+            <div class="header">
+                <div class="logo"></div>
+                <div class="navigation">
+                    <ul>
+                        <li><a href="#">ДОКУМЕНТЫ</a></li>
+                        <li><a href="#">ЦЕНЫ</a></li>
+                        <li><a href="#">ДОСТАВКА</a></li>
+                        <li><a href="#">ГАРАНТИИ</a></li>
+                        <li><a href="#">ОТЗЫВЫ</a></li>
+                        <li><a href="#">КОНТАКТЫ</a></li>
+                    </ul>
+                </div>
+                <div class="header__button"><button>ЗАКАЗАТЬ</button></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="conteiner__column1">
+                            <h2>ЗАКАЖИ ДИПЛОМ НЕДОРОГО!</h2>
+                            <p>Граждане часто сталкиваются с необходимостью в наличии диплома определенной специальности
+                                при
+                                устройстве на работу. Обучение в ВУЗе требует больших финансовых и временных затрат.
+                                Решением проблемы станет приобретение документа. Узнавая, где можно купить диплом,
+                                обратите
+                                внимание на нашу компанию. Она заслужила доверие клиентов благодаря качественному
+                                предоставлению услуг.</p>
+                            <div class="conteiner__column1__button"><button>ПОДРОБНЕЕ</button></div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="conteiner__column2">
+                            <img src="css/image/narod.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="row__gosznaki">
+                        <div class="row__gosznaki__img"> <img src="css/image/gosznak.png" alt=""></div>
+                        <div class="row__gosznaki__a"><a href="#">ГОСЗНАК</a></div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row__gosznaki">
+                        <div class="row__gosznaki__img"> <img src="css/image/kachestvo.png" alt=""></div>
+                        <div class="row__gosznaki__a"> <a href="#">ГАРАНТИРОВАННОЕ КАЧЕСТВО</a></div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row__gosznaki">
+                        <div class="row__gosznaki__img"> <img src="css/image/dostavka.png" alt=""></div>
+                        <div class="row__gosznaki__a"> <a href="#">ДОСТАВКА <br> ПО РОССИИ И СНГ</a></div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row__gosznaki">
+                        <div class="row__gosznaki__img"> <img src="css/image/hand.png" alt=""></div>
+                        <div class="row__gosznaki__a"> <a href="#">ВЫГОДНО</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conteiner-centr">
+            <div class="row">
+                <div class="col-6">
+                    <div class="conteiner-centr__doky__block1">
+                        <div class="conteiner-centr__doky__block1__a"><a href="#">ДИПЛОМЫ</a></div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="conteiner-centr__doky__block2">
+                        <div class="conteiner-centr__doky__block1__a"><a href="#">СПРАВКИ</a></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="conteiner-centr__doky__block3">
+                        <div class="conteiner-centr__doky__block1__a"><a href="#">СВИДЕТЕЛЬСТВА</a></div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="conteiner-centr__doky__block4">
+                        <div class="conteiner-centr__doky__block1__a"><a href="#">АТТЕСТАТЫ</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- слайды -->
+        <div class="container-fluid">
+          <div class="slider">
+            <div class="slides-container">
+                <div class="slide"><img src="image/narod.png" alt=""></div>
+                <div class="slide"><img src="image/diplom.png" alt=""></div>
+                <div class="slide"><img src="image/narod.png" alt=""></div>
+                <div class="slide"><img src="image/gosznak.png" alt=""></div>
+            </div>
+            
+            <div class="arrows__container">
+                <button class="arrows-container__item left-btn"><</button>
+                        <button class="arrows-container__item rigth-btn">></button>
+            </div>
+        </div>
+        </div>
+        <script>
+         let left = document.querySelector('.left-btn'),
+                rigth = document.querySelector('.rigth-btn'),
+                slidesArea = document.querySelector('.slides-container'),
+                i = 0;
+
+            let sliderAnimate = (n) => {
+                i += n;
+
+                if (i <= -400) {
+                    i = 0;
+                } else if (i > 0) {
+                    i = -100;
+                }
+
+                slidesArea.style.left = `${i}%`;
+
+            }
+            left.addEventListener('click', () => {
+                sliderAnimate(100);
+            });
+            rigth.addEventListener('click', () => {
+                sliderAnimate(-100);
+            });
+       
+        </script>
+        <!-- предпоследний блок -->
+        <div class="conteiner-centr">
+            
+            <h5>ДОКУМЕНТЫ О ВЫСШЕМ ОБРАЗОВАНИИ</h5>
+            <div class="text__p">
+                <p>В наши дни трудоустройство на любую солидную работу невозможно без ряда соответствующих документов.
+                    Среди
+                    них
+                    документ, подтверждающий высшее образование с уверенностью можно считать главным – именно он
+                    позволяет
+                    вам
+                    работать по определенной специальности и получать соответствующую зарплату. Жизнь может подкинуть
+                    довольно
+                    неприятные сюрпризы – например, отчисление с последнего курса или банальную утерю диплома по
+                    неосторожности.
+                    Восстановить документ вполне реально, но подобная процедура может занять много времени, а порой и
+                    денег
+                    –
+                    просто так уже давно ничего не делается. Все это делает предложения организаций, которые предлагают
+                    своим
+                    клиентам документы о высшем образовании, очень и очень востребованными. Ведь в наши дни опыт работы
+                    решает
+                    куда как больше, чем какая-то бумажка, но именно её отсутствие может стать для многих непреодолимой
+                    преградой. К счастью, устранить подобную неприятность довольно просто – обратитесь к нам.
+                    <br>
+                    Множество компаний во всех крупных городах предлагают услуги подобного рода – и столица не
+                    исключение.
+                    Любые
+                    документы о высшем образовании купить в Москве довольно просто – глаза разбегаются от тематических
+                    объявлений, как в реальной жизни, так и в Сети. Но не спешите обращаться в первую попавшуюся контору
+                    –
+                    качество приобретенных дипломов, свидетельств и аттестатов у большинства из них довольно низкое.
+                    Заказывать
+                    подобные документы нужно у надежной и проверенной временем организации, которая гарантирует
+                    качественный
+                    результат в оформлении документов любого уровня сложности.
+
+                    Любой документ начинается с бланка – и от качества его изготовления зависит очень многое. Своим
+                    клиентам
+                    мы
+                    предлагаем документ государственного образца, который ничем не отличается от оригинального и
+                    содержит
+                    все
+                    необходимые степени защиты. печатей кафедр также должны соответствовать оригинальным, причем с
+                    учетом
+                    даты
+                    выдачи диплома. Здесь вступает в дело банк образцов печатей и факсимиле – в нашей организации его
+                    размер
+                    довольно внушительный. На протяжении более 20 лет мы собирали подобные данные у ведущих ВУЗов в
+                    нашей
+                    стране, так что переживать за подлинность фамилии или тип печати вам не придется. Гарантия на все
+                    выполняемые работы является лучшим тому подтверждением и рекомендацией для начала сотрудничества.
+                </p>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="container-fluid">
+            <div class="footer">
+                <p>© ООО «Дипломзагод” <br>
+                    +7 (3952) 758-198, info@gmail.com</p>
+            </div>
+        </div>
+
+        
+    </div>
+</body>
+
+</html>
